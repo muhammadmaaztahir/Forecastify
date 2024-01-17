@@ -521,7 +521,7 @@ hr {
     font-size: 14px;
 }
 
-
+/* working on responsiveness */
 @media(max-width: 1024px) {
 
     .hero {
