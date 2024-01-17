@@ -419,7 +419,7 @@ hr {
     /* column-gap: 2px; */
     flex-wrap: wrap;
     /* overflow-x: auto; */
-    row-gap: 10px;
+    row-gap: 20px;
     column-gap: 15px;
     max-height: 100%;
     /* background-color: red; */
