@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="left">
+                <input type="text" id="cityInput" placeholder="Enter city name">
+                <div class="weather_container" id="weather_container">
+                    <span id="cityName2"><span class="location material-symbols-outlined">
+                            location_on
+                        </span><span id="cityName"></span>
+                        <span id="invalidCityMsg"
+                            style="display:none; font-size: 26px; font-weight: 600; color:red;">This
+                            is not a valid Location.</span><span id="icon"></span></span>
+
+                    <h1 id="temp"><sup></sup></h1>
+                    <h2 id="condition"></h2>
+                    <p id="description"></p>
+                    <div class="parameters">
+                        <div class="par" id="feels_like">
+                            <div>
+                                <span class="material-symbols-outlined">device_thermostat</span>
+                                <span>Feels Like</span>
+                            </div>
+                            <h3 id="fl">
+                                <unit><sup></sup></unit>
+                            </h3>
+                        </div>
+                        <div class="par" id="precipitation">
+                            <div>
+                                <span class="material-symbols-outlined">water_drop</span>
+                                <span>Precip.</span>
+                            </div>
+                            <h3 id="prec">
+                                <unit></unit>
+                            </h3>
+                        </div>
+                        <div class="par" id="visibility">
+                            <div>
+                                <span class="material-symbols-outlined">visibility</span>
+                                <span>Visibility</span>
+                            </div>
+                            <h3 id="vis">
+                                <unit></unit>
+                            </h3>
+                        </div>
+                        <div class="par" id="humidity">
+                            <div>
+                                <span class="material-symbols-outlined">humidity_percentage</span>
+                                <span>Humidity</span>
+                            </div>
+                            <h3 id="hum">
+                                <unit></unit>
+                            </h3>
+                        </div>
+                        <div class="par" id="sunrise">
+                            <div>
+                                <span class="material-symbols-outlined">wb_sunny</span>
+                                <span>Sunrise</span>
+                            </div>
+                            <h3 id="sr">
+                                <unit></unit>
+                            </h3>
+                        </div>
+                        <div class="par" id="sunset">
+                            <div>
+                                <span class="material-symbols-outlined">sunny</span>
+                                <span>Sunset</span>
+                            </div>
+                            <h3 id="ss">
+                                <unit></unit>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="middle">
+                <div class="hourly_forecast">
+                    <div class="head">
+                        <span class="material-symbols-outlined">schedule</span>
+                        <span>Hourly Forecast</span>
+                    </div>
+                    <hr>
+                    <div class="data" id="hourly_forecast_data">
+
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="daily_forecast">
+                    <div class="head">
+                        <span class="material-symbols-outlined">calendar_today</span>
+                        <span>10 Day Forecast</span>
+                    </div>
+                    <hr>
+                    <div class="daily_forecast_data" id="daily_forecast_data">
+                    </div>
+                </div>
+                <div class="wind_conditions">
+                    <div class="uv_index">
+                        <div class="head">
+                            <span class="material-symbols-outlined">device_thermostat</span>
+                            <span>UV Index</span>
+                        </div>
+                        <div class="body">
+                            <h1 id="uv"></h1>
+                            <p id="uvCondition"></p>
+                        </div>
+                    </div>
+                    <div class="wind">
+                        <div class="head">
+                            <span class="material-symbols-outlined">calendar_today</span>
+                            <span>Wind</span>
+                        </div>
+                        <div class="body">
+                            <div class="wind_par">
+                                <div class="windUnits">
+                                    <p>Wind</p>
+                                </div>
+                                <div>
+                                    <h1 id="ws"></h1>
+                                    <p class="unit2">KM/H</p>
+                                </div>
+                            </div>
+                            <hr class="hr">
+                            <div class="wind_par gusts">
+                                <div class="gustsUnits">
+                                    <p>Gusts</p>
+                                </div>
+                                <div>
+                                    <h1 id="gusts"></h1>
+                                    <p class="unit2">KM/H</p>
+                                </div>
+                            </div>
+                            <hr class="hr_2">
+                            <div class="wind_par direction">
+                                <div class="directionUnits">
+                                    <p>Direction</p>
+                                </div>
+                                <div>
+                                    <h1 id="wd"></h1>
+                                    <p class="unit2">degrees</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
