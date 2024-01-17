@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('hourly_forecast_data').innerHTML = '';
         document.getElementById('wd').innerHTML = '';
         document.querySelector('.location').style.display = 'none';
-        // document.getElementById('invalidCityMsg').style.display = 'none';
         hideWindAndGustsUnits();
     }
 
@@ -106,14 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('prec').innerHTML = `${precipitation}`;
         document.getElementById('wd').innerHTML = `${windDirection}`;
         document.getElementById('uv').textContent = uvIndex;
-        // document.querySelector('wind_par').innerHTML = `
-        // <div>
-        //     <h1 id="ws">${windSpeed}</h1>
-        // </div>
-        // <div class="windUnits">
-        //     <p>KM/H</p>
-        //     <p>Wind</p>
-        // </div>`;
         document.getElementById('ws').textContent = windSpeed;
         document.getElementById('invalidCityMsg').style.display = 'none';
 
@@ -201,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let dayOfWeek = isToday(currentDate, new Date(dailyData[i].datetime)) ? "Today" : getDayOfWeek(dailyData[i].datetime);
             let formattedDate = formatDate(new Date(dailyData[i].datetime));
             let temperature = dailyData[i].temp;
-            let iconSrc = "Icons/" + dailyData[i].icon + ".png"; // Assuming icon names match your file names
+            let iconSrc = "Icons/" + dailyData[i].icon + ".png";
 
             dayDiv.innerHTML = `
         <p>${dayOfWeek}</p>
@@ -216,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             function formatDate(date) {
                 let day = date.getDate().toString().padStart(2, '0');
-                let month = (date.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-based
+                let month = (date.getMonth() + 1).toString().padStart(2, '0');
                 return `${day}/${month}`;
             }
             container.appendChild(dayDiv);
@@ -248,7 +239,6 @@ document.addEventListener('DOMContentLoaded', function () {
             hours[nextHourIndex].scrollIntoView({ behavior: 'smooth' });
         }
 
-        //function for get day from date
         function getDayOfWeek(dateString) {
             const date = new Date(dateString);
             const options = { weekday: 'long' }
@@ -256,8 +246,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const dayOfWeek = date.toLocaleDateString('en-US', options);
             return dayOfWeek;
         }
-
-        //function to convert my time
+       
         function convertTimeTo12HourFormat(timeString) {
             const [hour, minute, second] = timeString.split(':').map(Number);
             const time = new Date(0, 0, 0, hour, minute, second);
@@ -300,17 +289,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             weatherIconElement.style.display = 'none';
         }
-
-
-
-        // if (iconMappings[weatherIcon]) {
-        //     weatherIconElement.src = iconMappings[weatherIcon];
-        //     weatherIconElement.style.display = 'inline-block';
-        // }
-
-        // else {
-        //     weatherIconElement.style.display = 'none';
-        // }
 
         function isToday(date1, date2) {
             return date1.getDate() === date2.getDate() && date1.getMonth() === date2.getMonth() && date1.getFullYear() === date2.getFullYear();
