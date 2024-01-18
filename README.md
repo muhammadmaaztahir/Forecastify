@@ -1,6 +1,7 @@
 # Forecastify
 
-<img src="Weather App.png" alt="Weather App">
+<img src="Karachi Weather.png" alt="Weather App">
+<img src="Moscow Weather.png" alt="Weather App">
 
 ## Description
 
